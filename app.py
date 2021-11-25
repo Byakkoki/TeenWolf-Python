@@ -21,7 +21,30 @@ def choice():
 
     reponse = input("Choisissez le rang de votre Personnages de TeenWolf : ")
 
-    input("Vous avez choisie : " + (str(reponse) + " " + personnes[reponse][0]) +"")
+#Récuperer le personnage que l'on a choisie
+    input("Vous avez choisie : " + ((reponse) + " " + personnes[reponse][0]) +"")
 
+"""
+Donner les informations à l'utilisateur par rapport au choix d'avant :
+Nom, Nom acteur, Age, Description etc
+"""
+
+
+
+#Demander si il veut continuer de parcourir les données / Arreter le programme
+
+"""
+def replay():
+    playAgain = input("Souhaitez vous continuer a lire la DATA ? (o/n) ")
+    if playAgain.lower() == 'o':
+        return True
+    if playAgain.lower() == 'n':
+        return False
+
+    if replay() == False:
+        print("Tu est pas gentil l'ami")
+    else:
+        print("Tu est une gentil personne l'ami")
+"""
 
 print(choice())

@@ -9,4 +9,4 @@ Put the TeenWolf.sql in your PHPMyAdmin and then change the connexion MySQL :
 
 Once this is done you will only have to run the program and retrieve the data of the characters of the saga
 
-:)
+HAVE FUN :)

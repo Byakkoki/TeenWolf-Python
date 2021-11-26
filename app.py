@@ -1,18 +1,23 @@
 '''
-Si vous avez pip : c'est cool
+Si vous avez pip : C'est good
+Sinon installer le :
 sudo apt install python3-pip
 
+Puis installer le module SQL
 le module sql: 
 pip install mysql-connector-python
 '''
-
+#Importer le module sql puis se connecter avec
 import mysql.connector
 connection = mysql.connector.connect(user='phpmyadmin', password='password', host='localhost', port='3306', database='TeenWolf')
 cursor = connection.cursor()
+
+#On cherche dans la TABLE Personnage tout les idPersonnage, nom à l'interieur
 req = "SELECT idPersonnage, nom FROM Personnage"
 cursor.execute(req)
 personnes = cursor.fetchall()
 
+#Class qui permet de mettre de la couleurs dans les print
 class bcolors:
     replayfalse = '\033[92m' #GREEN + CHOIX PERSONNAGE
     replaytext = '\033[93m' #YELLOW
@@ -20,6 +25,8 @@ class bcolors:
     colorViolet = '\033[95m' #TEST
     RESET = '\033[0m' #RESET COLOR
 
+
+#Tableau pour donner les données à l'utilisateur
 f = [
     "Nom",
     "Nom Acteur",
@@ -35,7 +42,7 @@ def choice():
     for i in range(0, len(personnes)):
         print(str(i) + " " + personnes[i][1])
 
-    reponse = int(input(bcolors.reponsetext + "Choisissez le rang de votre Personnages de TeenWolf (0 --> 13) : "))
+    reponse = int(input(bcolors.reponsetext + "Choisissez le rang de votre Personnages de TeenWolf (0 --> 20) : "))
 
 #Récuperer le personnage que l'on a choisie
     print(bcolors.replayfalse + "Vous avez choisie : " + (str((reponse)) + " " + personnes[reponse][1]) +"")
@@ -54,7 +61,7 @@ def choice():
 
     print("-----------------------------------------")
 
-#Print qui nous renvoie dans la fonction replay() pour demander à l'utilisateur si il veux continuer de naviguer
+#Print qui nous renvoie dans la fonction replay() pour demander à l'utilisateur si il veux continuer de naviguer ou quitter le programme
     print(replay())
 
 #Fonction permettant de demander a l'utilisateur si il veut relancer la fonction choice()
